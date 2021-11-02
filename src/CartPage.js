@@ -4,12 +4,16 @@ import Item from "./Item";
 import "./CartPage.css";
 
 function CartPage({ items, onAddOne, onRemoveOne }) {
+  const getCartTotals = (cart) => {
+    return cart.reduce((accu, item) => {
+      return accu + item.price * item.count;
+    }, 0);
+  };
   return (
     <ul className="CartPage-items">
       {" "}
       {items.map((item) => (
         <li key={item.id} className="CartPage-item">
-          {" "}
           <Item item={item}>
             <div className="CartItem-controls">
               {" "}
@@ -30,6 +34,7 @@ function CartPage({ items, onAddOne, onRemoveOne }) {
           </Item>
         </li>
       ))}
+      <div className="total">Total: {getCartTotals(items)}</div>
     </ul>
   );
 }
