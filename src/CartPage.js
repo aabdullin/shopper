@@ -9,7 +9,7 @@ function CartPage({ items, onAddOne, onRemoveOne }) {
       return accu + item.price * item.count;
     }, 0);
   };
-  return (
+  return items.length > 0 ? (
     <ul className="CartPage-items">
       {" "}
       {items.map((item) => (
@@ -36,6 +36,8 @@ function CartPage({ items, onAddOne, onRemoveOne }) {
       ))}
       <div className="total">Total: {getCartTotals(items)}</div>
     </ul>
+  ) : (
+    <p> The cart is empty </p>
   );
 }
 
