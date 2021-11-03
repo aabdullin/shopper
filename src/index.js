@@ -61,6 +61,12 @@ class Reddit extends React.Component {
         <div>
           {posts.map((post) => (
             <div className="post" key={post.id}>
+              <div className="counter">
+                <button onClick={this.increment}>+</button>
+                {/* <span>{post.num_comments}</span> */}
+                <span>{this.state.count}</span>
+                <button onClick={this.decrement}>-</button>
+              </div>
               <div className="body">
                 <a href={post.url} rel="noreferrer">
                   <div className="title"> {post.title} </div>
