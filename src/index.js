@@ -4,10 +4,30 @@ import axios from "axios";
 import "./index.css";
 
 class Reddit extends React.Component {
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //       count: 0,
+  //     };
+  //   }
+
   state = {
+    count: 0,
     posts: [],
     error: undefined,
     isLoading: false,
+  };
+
+  increment = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
+
+  decrement = () => {
+    this.setState({
+      count: this.state.count - 1,
+    });
   };
 
   componentDidMount() {
