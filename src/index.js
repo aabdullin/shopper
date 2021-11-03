@@ -41,15 +41,21 @@ class Reddit extends React.Component {
         <div>
           {posts.map((post) => (
             <div className="post" key={post.id}>
-              <a href={post.url} rel="noreferrer">
-                <div className="title"> {post.title} </div>
-              </a>
-              <div className="submitted">
-                Submitted by <div className="author"> {post.author} </div>{" "}
-              </div>
-              <div className="comments">
-                {" "}
-                {post.num_comments} <div className="actions"> comments share save hide report </div>{" "}
+              <div className="body">
+                <a href={post.url} rel="noreferrer">
+                  <div className="title"> {post.title} </div>
+                </a>
+                <div className="submitted">
+                  Submitted by <div className="author"> {post.author} </div>{" "}
+                </div>
+                <div className="comments">
+                  {" "}
+                  {post.num_comments}{" "}
+                  <div className="actions">
+                    {" "}
+                    comments share save hide report{" "}
+                  </div>{" "}
+                </div>
               </div>
             </div>
           ))}

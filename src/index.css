@@ -9,6 +9,8 @@
 
 .submitted {
   color: grey;
+  display: flex;
+  flex-direction: row;
 }
 
 .post {
@@ -21,6 +23,8 @@
 
 .comments {
   color: rgb(141, 38, 38);
+  display: flex;
+  flex-direction: row;
 }
 
 .btn-xs {
