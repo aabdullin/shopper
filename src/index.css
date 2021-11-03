@@ -1,0 +1,78 @@
+.title {
+  color: rgb(141, 38, 38);
+  font-size: 22px;
+}
+
+.actions {
+  color: grey;
+}
+
+.submitted {
+  color: grey;
+}
+
+.post {
+  margin: 5px;
+}
+
+.author {
+  color: black;
+}
+
+.comments {
+  color: rgb(141, 38, 38);
+}
+
+.btn-xs {
+  max-width: 50px;
+}
+
+.btn-lg {
+  max-width: 150px;
+}
+
+.btn-md {
+  max-width: 100px;
+}
+
+.internet_radio {
+  display: flex;
+  flex-direction: row;
+}
+
+.genre {
+  order: 5;
+}
+
+.logotype {
+  font-weight: bold;
+}
+
+.rest {
+  margin: 0 0 0 5px;
+}
+
+.list_of_threads {
+  font-family: Helvetica, sans-serif;
+  max-width: 2000px;
+  color: #333;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  background-color: lightyellow;
+  border-color: lightyellow;
+}
+
+.meta-data {
+  font-size: small;
+}
+
+.thread-list-item {
+  margin: 1%;
+  padding: 0%;
+}
+
+.title,
+.metadata {
+  display: flex;
+}
