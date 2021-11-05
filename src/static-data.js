@@ -1,4 +1,4 @@
-const channels = [
+let channels = [
   {
     name: "general",
     messages: [
@@ -45,3 +45,5 @@ const channels = [
     ],
   },
 ];
+
+export { channels };

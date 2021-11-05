@@ -1,0 +1,6 @@
+.App {
+  background-color: rgb(44, 44, 105);
+  color: white;
+  display: flex;
+  direction: row;
+}

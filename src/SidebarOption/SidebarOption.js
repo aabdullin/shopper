@@ -1,23 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Item.css";
 
-const Item = ({ item, children }) => (
-  <div className="Item">
-    <div className="Item-left">
-      <div className="Item-image" />
-      <div className="Item-title">{item.name}</div>
-      <div className="Item-description">{item.description}</div>
-    </div>
-    <div className="Item-right">
-      <div className="Item-price">${item.price}</div>
-      {children}
-    </div>
+const SidebarOption = ({ items, people }) => (
+  <div className="SideBarOption">
+    <div className="channels"> Channels </div>{" "}
+    <ul>
+      {items.map((item) => (
+        <li className="channel"> {item.name}</li>
+      ))}
+    </ul>
+    <div className="people"> People </div>{" "}
+    <ul>
+      {" "}
+      {people.map((person) => (
+        <li className="people"> {person.name}</li>
+      ))}
+    </ul>
   </div>
 );
-Item.propTypes = {
+
+SidebarOption.propTypes = {
   item: PropTypes.object.isRequired,
-  children: PropTypes.node,
+  people: PropTypes.node,
 };
 
-export default Item;
+export default SidebarOption;
