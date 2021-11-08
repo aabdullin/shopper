@@ -1,20 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import channels from "../static-data";
 
-function ListOfMessages({ channels }) {
+function ListOfMessages({ messages }) {
   return (
     <ul className="messages">
-      {channels.map((item) => (
-        <div> {item.messages}</div>
+      {messages.map((item) => (
+        <div> {`${item.from}: ${item.message}`}</div>
       ))}
     </ul>
   );
 }
 
-// ListOfMessages.propTypes = {
-//   messages: PropTypes.object.isRequired,
-//   children: PropTypes.node,
-// };
+ListOfMessages.propTypes = {
+  messages: PropTypes.object.isRequired,
+  children: PropTypes.node,
+};
 
 export default ListOfMessages;

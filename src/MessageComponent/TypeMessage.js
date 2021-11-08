@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function TypeMessage({ messages, children }) {
+function TypeMessage() {
   return <input type="text" name="name" />;
 }
 

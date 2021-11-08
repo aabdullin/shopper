@@ -6,6 +6,14 @@ let channels = [
         from: "Dave",
         message: "Hello",
       },
+      {
+        from: "Jake",
+        message: "Hello",
+      },
+      {
+        from: "Romeo",
+        message: "Como estas!",
+      },
     ],
   },
   {

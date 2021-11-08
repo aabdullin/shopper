@@ -7,10 +7,19 @@ import { people } from "./static-data-people";
 import "./App.css";
 
 const App = () => {
+  const [activeChannel, setActiveChannel] = useState(channels[0]);
+
   return (
     <div className="App">
-      <SidebarOption items={channels} people={people} />
-      <MessageComponent/>
+      <SidebarOption
+        activeChannel={activeChannel}
+        onChannelClicked={(channelName) => {
+          setActiveChannel(channels.find((c) => c.name === channelName));
+        }}
+        items={channels}
+        people={people}
+      />
+      <MessageComponent activeChannel={activeChannel} />
     </div>
   );
 };

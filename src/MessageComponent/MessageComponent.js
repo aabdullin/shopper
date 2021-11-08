@@ -2,13 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import ListOfMessages from "./ListOfMessages";
 import TypeMessage from "./TypeMessage";
-import channels from "../static-data.js";
 
-function MessageComponent({ items, children }) {
+function MessageComponent({ activeChannel }) {
   return (
     <div>
-      <ListOfMessages items={channels} />
-      <TypeMessage />
+      <ListOfMessages messages={activeChannel.messages} />
+      <div className="type">
+        <TypeMessage />
+      </div>
     </div>
   );
 }

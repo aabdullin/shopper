@@ -4,3 +4,7 @@
   display: flex;
   direction: row;
 }
+
+.type {
+  padding-top: 100px;
+}
