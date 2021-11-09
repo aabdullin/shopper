@@ -8,7 +8,7 @@ function ItemPage({ items, onAddToCart }) {
     <ul className="ItemPage-items">
       {" "}
       {items.map((item) => (
-        <li key={item.id} className="ItemPage-item">
+        <li className="ItemPage-item">
           {" "}
           <Item item={item}>
             <button
