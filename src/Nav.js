@@ -1,8 +1,10 @@
 import React from "react";
+import { useLocation } from "react-router";
 
-const Nav = ({ activeTab, onTabChange }) => {
+const Nav = ({ onTabChange }) => {
+  const location = useLocation();
   const itemClass = (tabName) =>
-    `App-nav-item ${activeTab === tabName ? "selected" : ""}`;
+    `App-nav-item ${location === tabName ? "selected" : ""}`;
   return (
     <nav className="App-nav">
       <ul>
