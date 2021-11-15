@@ -5,8 +5,12 @@ import "./App.css";
 import ItemPage from "./ItemPage";
 import { items } from "./static-data";
 import CartPage from "./CartPage";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Item from "./Item";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 const summarizeCart = (cart) => {
   const groupedItems = cart.reduce((summary, item) => {
@@ -18,7 +22,6 @@ const summarizeCart = (cart) => {
 };
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState("items");
   const [cart, setCart] = useState([]);
   const addToCart = (item) => {
     setCart((prevCart) => [...prevCart, item]);
@@ -37,51 +40,25 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <li>
-            <Link to="/item">Item </Link>
-            <Link to="/cart">Card </Link>
-          </li>
-        </nav>
-
-        <Switch>
-          <Route path="/item">
-            <ItemPage />
-          </Route>
-          <Route path="/cart">
-            <CartPage />
-          </Route>
-        </Switch>
-
-        <Nav activeTab={activeTab} onTabChange={setActiveTab} />
+        <Nav />
         <main className="App-content">
-          {" "}
-          {/* <Content
-            tab={activeTab}
-            onAddToCart={addToCart}
-            onRemoveItem={removeItem}
-            cart={summarizeCart(cart)}
-          />{" "} */}
+          <Switch>
+            <Route exact path="/" render={() => <Redirect to="/item" />} />
+            <Route path="/item">
+              <ItemPage items={items} onAddToCart={addToCart}></ItemPage>
+            </Route>
+            <Route path="/cart">
+              <CartPage
+                items={summarizeCart(cart)}
+                onAddOne={addToCart}
+                onRemoveOne={removeItem}
+              />
+            </Route>
+          </Switch>
         </main>
       </div>
     </Router>
   );
-};
-
-const Content = ({ tab, onAddToCart, onRemoveItem, cart }) => {
-  switch (tab) {
-    default:
-    case "items":
-      return <ItemPage items={items} onAddToCart={onAddToCart} />;
-    case "cart":
-      return (
-        <CartPage
-          items={cart}
-          onAddOne={onAddToCart}
-          onRemoveOne={onRemoveItem}
-        />
-      );
-  }
 };
 
 ReactDOM.render(<App />, document.querySelector("#root"));

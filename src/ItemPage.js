@@ -7,8 +7,8 @@ function ItemPage({ items, onAddToCart }) {
   return (
     <ul className="ItemPage-items">
       {" "}
-      {items.map((item) => (
-        <li className="ItemPage-item">
+      {items.map((item, index) => (
+        <li key={index} className="ItemPage-item">
           {" "}
           <Item item={item}>
             <button

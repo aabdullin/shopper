@@ -1,18 +1,20 @@
 import React from "react";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 
-const Nav = ({ onTabChange }) => {
+const Nav = ({}) => {
   const location = useLocation();
+  console.log(location);
   const itemClass = (tabName) =>
-    `App-nav-item ${location === tabName ? "selected" : ""}`;
+    `App-nav-item ${location.pathname === tabName ? "selected" : ""}`;
   return (
     <nav className="App-nav">
       <ul>
-        <li className={itemClass("items")}>
-          <button onClick={() => onTabChange("items")}> Items</button>
+        <li className={itemClass("/item")}>
+          <Link to="/item">Item </Link>{" "}
         </li>
-        <li className={itemClass("cart")}>
-          <button onClick={() => onTabChange("cart")}>Cart</button>
+        <li className={itemClass("/cart")}>
+          <Link to="/cart">Cart </Link>{" "}
         </li>
       </ul>{" "}
     </nav>
